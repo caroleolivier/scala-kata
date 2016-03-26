@@ -11,7 +11,7 @@ class ReverseLinkedList {
       println(node.get.getContent())
       display(node.get.getNext())
     case None =>
-      println("nothing")
+      println(None)
   }
 
   private def reverseRec(current: Option[Node], previous: Option[Node]): Option[Node] = current match {

@@ -1,4 +1,4 @@
-import reverseLinkedList.Node
+import reverseLinkedList.{ReverseLinkedList, Node}
 
 /**
   * Created by carole on 24/03/2016.
@@ -11,9 +11,8 @@ object Main {
     val node2 = new Node(2, node3)
     val node1 = new Node(1, node2)
 
-    //reverse(Option(node1))
-    display(Option(node1))
-    display(reverseRec(Option(node1), None))
+    val reverseLinkedList = new ReverseLinkedList
+    reverseLinkedList.display(Option(node1))
+    reverseLinkedList.display(reverseLinkedList.reverse(Option(node1)))
   }
-
 }
