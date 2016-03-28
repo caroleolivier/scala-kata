@@ -1,3 +1,4 @@
+import list.problemContainer
 import reverseLinkedList.{ReverseLinkedList, Node}
 
 /**
@@ -6,13 +7,13 @@ import reverseLinkedList.{ReverseLinkedList, Node}
 object Main {
   def main(args: Array[String]): Unit = {
     println("Go!")
-    val node4 = new Node(4)
-    val node3 = new Node(3, node4)
-    val node2 = new Node(2, node3)
-    val node1 = new Node(1, node2)
 
-    val reverseLinkedList = new ReverseLinkedList
-    reverseLinkedList.display(Option(node1))
-    reverseLinkedList.display(reverseLinkedList.reverse(Option(node1)))
+    val list = List(3, 6, 2, 19, 8, 15, 4)
+
+    val problemContainer = new problemContainer
+    println(problemContainer.pack(List(1, 2, 2, 3, 4, 4, 4, 5, 5, 6, 5, 6, 6)))
+
+    println(problemContainer.pack(List()))
+
   }
 }
