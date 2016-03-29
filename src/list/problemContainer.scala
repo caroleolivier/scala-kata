@@ -86,4 +86,16 @@ class problemContainer {
       acc ++ List.fill(pack._2)(pack._1)
     })
   }
+
+  def encodeDirect[T](list: List[T]) : List[(T, Int)] = {
+    list.foldRight(List[(T, Int)]())((crt, acc) => acc match {
+      case head :: _ => {
+        crt match {
+          case i: T if i == acc.head._1 => (acc.head._1, acc.head._2 + 1) :: acc.drop(1)
+          case i => (i, 1) :: acc
+        }
+      }
+      case _ => List((crt, 1))
+    })
+  }
 }
