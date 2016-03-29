@@ -82,9 +82,7 @@ class problemContainer {
   }
 
   def decode[T](list: List[(T, Int)]) : List[T] = {
-    list.foldLeft(List[T]())((acc, pack) => {
-      acc ++ List.fill(pack._2)(pack._1)
-    })
+    list.flatMap(pack => (0 to pack._2-1).map(i=> pack._1))
   }
 
   def encodeDirect[T](list: List[T]) : List[(T, Int)] = {
