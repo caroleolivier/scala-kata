@@ -76,4 +76,14 @@ class problemContainer {
       }
     case _ => List[List[T]]()
   }
+
+  def encode[T](list: List[T]) : List[(T, Int)] = {
+    pack(list) map { l => (l.head, l.length) }
+  }
+
+  def decode[T](list: List[(T, Int)]) : List[T] = {
+    list.foldLeft(List[T]())((acc, pack) => {
+      acc ++ List.fill(pack._2)(pack._1)
+    })
+  }
 }
