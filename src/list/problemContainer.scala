@@ -96,4 +96,14 @@ class problemContainer {
       case _ => List((crt, 1))
     })
   }
+
+  def duplicateN[T](n: Int, list: List[T]): List[T] = {
+    list.flatMap(elt => (1 to n).map(i => elt))
+  }
+
+  def drop[T](n: Int, list: List[T]): List[T] = n match
+  {
+    case 0 => throw new IllegalArgumentException
+    case i => list.zipWithIndex.filter(pair => ((pair._2+1) % i) != 0).map(pair => pair._1)
+  }
 }
