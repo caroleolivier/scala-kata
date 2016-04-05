@@ -122,4 +122,12 @@ class problemContainer {
   def removeAt[T](k: Int, list: List[T]) : List[T] = {
     list.take(k) ++ list.drop(k+1)
   }
+
+  def insertAt[T](k: Int, item: T, list: List[T]) : List[T] = {
+    list.take(k) ++ (item :: list.drop(k))
+  }
+
+  def range(a: Int, b: Int): List[Int] = {
+    List.range(a, b)
+  }
 }
