@@ -106,4 +106,16 @@ class problemContainer {
     case 0 => throw new IllegalArgumentException
     case i => list.zipWithIndex.filter(pair => ((pair._2+1) % i) != 0).map(pair => pair._1)
   }
+
+  def split[T](length: Int, list: List[T]): (List[T], List[T]) = {
+    (list.take(length), list.drop(length))
+  }
+
+  def slice[T](i: Int, k: Int, list: List[T]): List[T] = {
+    list.drop(i).take(k-i)
+  }
+
+  def rotate[T](n: Int, list: List[T]) : List[T] = {
+    list.drop(n % list.length) ++ list.take(n % list.length)
+  }
 }
