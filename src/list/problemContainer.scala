@@ -118,4 +118,8 @@ class problemContainer {
   def rotate[T](n: Int, list: List[T]) : List[T] = {
     list.drop(n % list.length) ++ list.take(n % list.length)
   }
+
+  def removeAt[T](k: Int, list: List[T]) : List[T] = {
+    list.take(k) ++ list.drop(k+1)
+  }
 }
