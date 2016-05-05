@@ -143,4 +143,16 @@ class problemContainer {
   def lotto(k: Int, n: Int) : List[Int] = {
     randomSelect(k, List.range(1, n+1))
   }
+
+  def randomPermute[T](list: List[T]) : List[T] = {
+    scala.util.Random.nextInt(2) match {
+      case 1 => list
+      case 0 => {
+        val currentIndex = scala.util.Random.nextInt(list.length)
+        val newIndex = scala.util.Random.nextInt(list.length)
+        val item = kthElt(list, currentIndex)
+        randomPermute(insertAt(newIndex, item, removeAt(currentIndex, list)))
+      }
+    }
+  }
 }
