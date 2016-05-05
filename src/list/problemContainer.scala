@@ -139,4 +139,8 @@ class problemContainer {
       randomSelect(n, removeAt(k, list))
     }
   }
+
+  def lotto(k: Int, n: Int) : List[Int] = {
+    randomSelect(k, List.range(1, n+1))
+  }
 }
