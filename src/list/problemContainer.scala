@@ -130,4 +130,13 @@ class problemContainer {
   def range(a: Int, b: Int): List[Int] = {
     List.range(a, b)
   }
+
+  def randomSelect[T](n: Int, list: List[T]) : List[T] = n match {
+    case 0 => List[T]()
+    case i: Int if i >= list.length => list
+    case _ => {
+      val k = scala.util.Random.nextInt(list.length)
+      randomSelect(n, removeAt(k, list))
+    }
+  }
 }
