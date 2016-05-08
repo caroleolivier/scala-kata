@@ -155,4 +155,11 @@ class problemContainer {
       }
     }
   }
+
+  def combination[T](k: Int, list: List[T]) : List[List[T]] = k match {
+    case i : Int if i > list.length => List[List[T]]()
+    case i : Int if i == list.length => List[List[T]](list)
+    case 1 => list.map(item => List[T](item))
+    case _ => combination(k, list.tail) ::: combination(k-1, list.tail).map(subComb => list.head :: subComb)
+  }
 }
