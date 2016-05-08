@@ -1,9 +1,9 @@
-package list
+package ninetyninepbs
 
 /**
   * Created by carole on 28/03/2016.
   */
-class problemContainer {
+class list {
   def lastBuiltIn[T](list : List[T]): T = {
     list.last
   }
